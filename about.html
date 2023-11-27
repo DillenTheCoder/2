@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="images/logo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>GVS Makelaars</title>
+    
+</head>
+<body>
+
+
+    <div class="background">
+</div>
+
+
+    <header class='main-header'>
+        <div class="menu-wrap">
+            <!-- Logo container -->
+            <p>GVS Brokers/Makelaars</p>
+            
+            <!-- When this is checked, nav menu is dropped -->
+            <input type='checkbox' id='nav-tog'>
+            <!-- Label for the checkbox -->
+            <label for='nav-tog' class="drop-trigger">
+                <!-- Hamburg bars -->
+                <span class="btn-bar top"></span>
+                <span class='btn-bar middle'></span>
+                <span class='btn-bar bottom'></span>
+            </label>
+            
+            <!-- Menu -->
+            <nav class="main-nav">
+                <!-- This covers the whole background of the dropped menu -->
+                <label for='nav-tog' class='nav-revert'></label>
+                <!-- Menu items -->
+                <a href='index.html' class="nav-item"><span>Home</span></a><br>
+                <a href='about.html' class="nav-item"><span>About Us</span></a><br>
+                <a href='blog&news.html' class="nav-item"><span>Blog & News</span></a><br>
+                <a href='autofindbranch.html' class="nav-item"><span>Our Branches</span></a><br>
+                <a href='quote.html' class="nav-item"><span>Get A Quote</span></a><br>
+                <a href='contact.html' class="nav-item"><span>Contact</span></a><br>
+            </nav>
+        </div>
+    </header><br><br><br><br>
+
+
+
+
+<center><img class="aboutimg" src="images/aboutus.jpg" alt=""></center><br><br>
+
+
+<div class="container2">
+    <p class="fade-in-paragraph">- GVS Brokers stands as a distinguished financial services provider, renowned for its unwavering commitment to excellence. With a team of dedicated and seasoned advisors, we have carved a significant presence in the financial landscape of South Africa. Our journey has been one of continuous growth and evolution, stemming from modest origins, characterized by sheer determination, and nurtured through enduring relationships with our valued clients.</p><br><br>
+    <p class="fade-in-paragraph">- Our success story has seen us expand to operate from a network of 11 branches across the nation. This extensive reach ensures that we can cater to a diverse clientele and offer tailored financial solutions that meet their unique needs. The roots of our success lie in our foundational principles of hard work, trust, and integrity. We value the relationships we have cultivated over the years, as they are the cornerstone of our growth and prosperity.</p><br><br>
+    <p class="fade-in-paragraph">- At present, our brokerage boasts a team of 14 dynamic and highly skilled brokers. With their expertise, we manage an annual Risk Premium portfolio exceeding R90 million. This substantial portfolio empowers us with a distinct advantage when it comes to negotiating premiums and efficiently processing claims. Our commitment to delivering the best financial services extends to the heart of our offerings.</p><br><br>
+    <p class="fade-in-paragraph">- We take great pride in offering meticulously crafted insurance products, designed to safeguard the assets and interests of our diverse clientele. Our comprehensive range of insurance solutions ensures that we cater to the specific needs of each individual, family, or business. With a blend of tradition and innovation, we continue to develop and refine our portfolio to remain at the forefront of the industry.</p><br><br>
+    <!-- Add more paragraphs as needed -->
+</div>
+
+
+
+
+<script>
+    
+    document.addEventListener('DOMContentLoaded', function () {
+    const fadeParagraphs = document.querySelectorAll('.fade-in-paragraph');
+
+    function fadeInOnScroll() {
+        fadeParagraphs.forEach((paragraph) => {
+            const distanceFromTop = paragraph.getBoundingClientRect().top;
+            const screenHeight = window.innerHeight;
+
+            if (distanceFromTop < screenHeight * 0.75) {
+                paragraph.style.opacity = '1';
+            }
+        });
+    }
+
+    window.addEventListener('scroll', fadeInOnScroll);
+    // Initial check to see if any elements are already in view
+    fadeInOnScroll();
+});
+
+</script>
+
+
+
+
+
+
+
+<footer>
+    <div class="content">
+      <div class="top">
+        <div class="logo-details">
+        </div>
+        <div class="media-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="link-boxes">
+        <ul class="box">
+          <li class="link_name">Company</li>
+          <li><a href="about.html">- About Us</a></li>
+          <li><a href="autofindbranch.html">- Branches</a></li>
+          <li><a href="contact.html">- Contact Us</a></li>
+          <li><a href="blog&news.html">- News & Blog</a></li>
+          <li><a href="reviews.html">- Reviews</a></li>
+        </ul>
+        <ul class="box">
+          <li class="link_name">Insurance For</li>
+          <li><a href="#">- Personal Lines</a></li>
+          <li><a href="#">- Commercial Lines</a></li>
+          <li><a href="#">- Commercial Vehicle</a></li>
+          <li><a href="#">- Goods & Transport</a></li>
+          <li><a href="#">- View More</a></li>
+
+        </ul>
+        <ul class="box">
+          <li class="link_name">Account</li>
+          <li><a href="termofservice.html"> Term Of Service</a></li>
+          <li><a href="about.html"> What We Offer</a></li>
+          <li><a href="autofindbranch.html"> Automaticly Find Branch</a></li>
+        </ul>
+        <ul class="box">
+          <li class="link_name">FAQ's</li>
+          <li><a href="https://divweb.co.za/" target="_blank">- Who Made Our Website</a></li>
+          <li><a href="contact.html">- How Can I Contact GVS</a></li>
+          <li><a href="allbranches.html">- Where is GVS </a></li>
+        </ul>
+        <ul class="box input-box"><br>
+          <li class="link_name">Subscribe</li>
+          <li><input type="text" placeholder="Enter your email"></li>
+          <li><input type="button" value="Subscribe"></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom-details">
+      <div class="bottom_text">
+       <center> <span class="copyright_text"><h4>Created & Developed by <a href="https://divweb.co.za"><u>DIV WEB</u></h4></a></span>
+      </div>
+    </div>
+  </footer>
+
+
+
+
+
+
+    </body>
+    </html>

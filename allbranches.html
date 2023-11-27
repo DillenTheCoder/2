@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="images/logo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>GVS Makelaars</title>
+    
+</head>
+<body>
+
+
+    <div class="background">
+</div>
+
+
+    <header class='main-header'>
+        <div class="menu-wrap">
+            <!-- Logo container -->
+            <p>GVS Brokers/Makelaars</p>
+            
+            <!-- When this is checked, nav menu is dropped -->
+            <input type='checkbox' id='nav-tog'>
+            <!-- Label for the checkbox -->
+            <label for='nav-tog' class="drop-trigger">
+                <!-- Hamburg bars -->
+                <span class="btn-bar top"></span>
+                <span class='btn-bar middle'></span>
+                <span class='btn-bar bottom'></span>
+            </label>
+            
+            <!-- Menu -->
+            <nav class="main-nav">
+                <!-- This covers the whole background of the dropped menu -->
+                <label for='nav-tog' class='nav-revert'></label>
+                <!-- Menu items -->
+                <a href='index.html' class="nav-item"><span>Home</span></a><br>
+                <a href='about.html' class="nav-item"><span>About Us</span></a><br>
+                <a href='blog&news.html' class="nav-item"><span>Blog & News</span></a><br>
+                <a href='autofindbranch.html' class="nav-item"><span>Our Branches</span></a><br>
+                <a href='quote.html' class="nav-item"><span>Get A Quote</span></a><br>
+                <a href='contact.html' class="nav-item"><span>Contact</span></a><br>
+            </nav>
+        </div>
+    </header><br><br><br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+    <style>
+
+        h3 {
+            color: #b12b2f;
+            font-size: 30px;
+            text-decoration: underline;
+        }
+        /* Add some basic styling to the grid */
+        .image-grid {
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Adjust the number of columns as needed */
+            gap: 20px; /* Adjust the gap between images */
+        }
+
+        /* Style for each grid item */
+        .grid-item {
+            border: 1px black solid;
+            text-align: center;
+        }
+
+        /* Style for the image */
+        .grid-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px; /* Add rounded corners if desired */
+        }
+
+        /* Style for the text under each image */
+        .grid-item p {
+            margin: 10px 0;
+        }
+
+
+                /* Media Queries */
+                @media (max-width: 600px) {
+            .image-grid {
+                grid-template-columns: 1fr; /* Display one column on small screens */
+            }
+        }
+
+        @media (min-width: 601px) and (max-width: 900px) {
+            .image-grid {
+                grid-template-columns: repeat(2, 1fr); /* Display two columns on medium screens */
+            }
+        }
+
+        li {
+            text-align: start;
+            margin-left: 10px;
+            font-size: 20px;
+        }
+
+
+    </style>
+    <title>Image Grid</title>
+</head>
+<body>
+
+<div class="image-grid">
+    <!-- Image 1 -->
+    <div class="grid-item">
+        <img src="images/logo..jpg" alt="Image 1"><br><br>
+        <h3>KLERKSDORP</h3>
+        <h3>Attie Stoltz</h3><br><br>
+        <li>Address: 35 De Waal Str. La-Hoff</li>
+        <li>Cell: +27 84 291 2198</li>
+        <li>Email: atties@gvsmakelaars.com</li><br>
+    </div>
+
+    <!-- Image 2 -->
+    <div class="grid-item">
+        <img src="images/logo..jpg" alt="Image 1"><br><br>
+        <h3>KIMBERLEY</h3>
+        <h3>Barnie du Plessis</h3><br><br>
+        <li>Address: 146 George Street, Kimberley, 8301</li>
+        <li>Cell: +27 84 808 0008</li>
+        <li>Email: barnie@gvsbrokers.co.za</li>
+        <li>Admin: admin@gvsbrokers.co.za</li>
+        <li>Claims: claims@gvsbrokers.co.za</li><br>
+
+        <h3>Jo-annette Botma</h3><br><br>
+        <li>Cell: +27 78 416 1642</li>
+        <li>Email: jo-annette@gvsbrokers.co.za</li><br>
+
+        <h3>Reghardt Swanepoel</h3><br><br>
+        <li>Cell: +27 82 682 2215</li>
+        <li>Email: reggie@gvsbrokers.co.za</li>
+    </div>
+
+
+    <!-- Image 3 -->
+    <div class="grid-item">
+        <img src="images/logo..jpg" alt="Image 1"><br><br>
+        <h3>KURUMAN</h3>
+        <h3>Madelein Bester</h3><br><br>
+        <li>Address: 12 Frylinck str. Kuruman, 8460</li>
+        <li>Cell: +27 79 524 2427</li>
+        <li>Email: madelein@gvsmakelaars.com</li><br>
+    </div>
+
+        <!-- Image 4 -->
+        <div class="grid-item">
+            <img src="images/logo..jpg" alt="Image 1"><br><br>
+            <h3>KATHU</h3>
+            <h3>Jaco Viviers</h3><br><br>
+            <li>Address: Sandkuil slot 4, Kathu, 8446</li>
+            <li>Cell: +27 82 511 7555</li>
+            <li>Email: jacov@gvsmakelaars.com</li><br>
+
+            <h3>Christelle Kampfer</h3><br><br>
+            <li>Cell: +27 82 776 0482</li>
+            <li>Email: gvskuruman1@mweb.co.za</li>
+        </div>
+
+    <!-- Image 5 -->
+    <div class="grid-item">
+        <img src="images/logo..jpg" alt="Image 1"><br><br>
+        <h3>MOSSELBAAI</h3>
+        <h3>Ansie Morrison</h3><br><br>
+        <li>Address: 184 Hellmuthia Drive, Mosselbaai Golf Estate</li>
+        <li>Cell: +27 83 667 7954</li>
+        <li>Email: ansie@gvsmakelaars.com</li><br>
+    </div>
+
+
+        <!-- Image 6 -->
+        <div class="grid-item">
+            <img src="images/logo..jpg" alt="Image 1"><br><br>
+            <h3>POTCHEFSTROOM</h3>
+            <h3>Barto Giessing</h3><br><br>
+            <li>Address: 37 Kuilvoer Singel, Potchefstroom, 2520</li>
+            <li>Cell: +27 82 774 7940</li>
+            <li>Email: barto@gvsmakelaars.com</li><br>
+        </div>
+
+
+    <!-- Image 7 -->
+    <div class="grid-item">
+        <img src="images/logo..jpg" alt="Image 1"><br><br>
+        <h3>SCHWEIZER-RENEKE</h3>
+        <h3>Frikkie Fourie</h3><br><br>
+        <li>Address: 64 Schweizerstraat Str, Schweizer-Reneke, 2780</li>
+        <li>Tel: +27 53 963 1868</li>
+        <li>Cell: +27 82 944 0382</li>
+        <li>Email: frikkie@gvsmakelaars.com</li><br>
+    </div>
+
+
+    <!-- Image 8 -->
+    <div class="grid-item">
+        <img src="images/logo..jpg" alt="Image 1"><br><br>
+        <h3>STRAND</h3>
+        <h3>Gerhard Swanepoel</h3><br><br>
+        <li>Address: 16 Maggie Laubser Ave. Strand, 7140</li>
+        <li>Cell: +27 82 312 2142</li>
+        <li>Email: gerhard@gvsmakelaars.com</li><br>
+    </div>
+
+
+    <!-- Image 9 -->
+    <div class="grid-item">
+        <img src="images/logo..jpg" alt="Image 1"><br><br>
+        <h3>VENTERSDORP</h3>
+        <h3>Riaan Giessing</h3><br><br>
+        <li>Address: 34 Aenmey Str, Ventersdorp, 2710</li>
+        <li>Cell: +27 82 459 9220</li>
+        <li>Email: riaang@gvsmakelaars.com</li><br>
+    </div>
+
+
+    <!-- Image 10 -->
+    <div class="grid-item">
+        <img src="images/logo..jpg" alt="Image 1"><br><br>
+        <h3>VRYBURG</h3>
+        <h3>Frikkie Fourie</h3><br><br>
+        <li>Address: 86B Stella Straat, Vryburg, 8601</li>
+        <li>Tel: +27 53 927 1001</li>
+        <li>Cell: +27 84 586 8961</li>
+        <li>Email: frikkie@gvsmakelaars.com</li><br>
+    </div>
+
+
+    <!-- Image 11 -->
+    <div class="grid-item">
+        <img src="images/logo..jpg" alt="Image 1"><br><br>
+        <h3>UPINGTON</h3>
+        <h3>Johan de Bruin</h3><br><br>
+        <li>Address: Posbus 2258, Upington, 8800</li>
+        <li>Tel: +27 54 332 3218</li>
+        <li>Cell: +27 84 511 2524</li>
+        <li>Email: johan@gvsmakelaars.com</li><br>
+    </div>
+</div>
+
+
+
+
+
+<footer>
+    <div class="content">
+      <div class="top">
+        <div class="logo-details">
+        </div>
+        <div class="media-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="link-boxes">
+        <ul class="box">
+          <li class="link_name">Company</li>
+          <li><a href="about.html">- About Us</a></li>
+          <li><a href="autofindbranch.html">- Branches</a></li>
+          <li><a href="contact.html">- Contact Us</a></li>
+          <li><a href="blog&news.html">- News & Blog</a></li>
+          <li><a href="reviews.html">- Reviews</a></li>
+        </ul>
+        <ul class="box">
+          <li class="link_name">Insurance For</li>
+          <li><a href="#">- Personal Lines</a></li>
+          <li><a href="#">- Commercial Lines</a></li>
+          <li><a href="#">- Commercial Vehicle</a></li>
+          <li><a href="#">- Goods & Transport</a></li>
+          <li><a href="#">- View More</a></li>
+
+        </ul>
+        <ul class="box">
+          <li class="link_name">Account</li>
+          <li><a href="termofservice.html"> Term Of Service</a></li>
+          <li><a href="about.html"> What We Offer</a></li>
+          <li><a href="autofindbranch.html"> Automaticly Find Branch</a></li>
+        </ul>
+        <ul class="box">
+          <li class="link_name">FAQ's</li>
+          <li><a href="https://divweb.co.za/" target="_blank">- Who Made Our Website</a></li>
+          <li><a href="contact.html">- How Can I Contact GVS</a></li>
+          <li><a href="allbranches.html">- Where is GVS </a></li>
+        </ul>
+        <ul class="box input-box"><br>
+          <li class="link_name">Subscribe</li>
+          <li><input type="text" placeholder="Enter your email"></li>
+          <li><input type="button" value="Subscribe"></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom-details">
+      <div class="bottom_text">
+       <center> <span class="copyright_text"><h4>Created & Developed by <a href="https://divweb.co.za"><u>DIV WEB</u></h4></a></span>
+      </div>
+    </div>
+  </footer>
+
+
+
+</body>
+</html>

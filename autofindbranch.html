@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="images/logo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>GVS Makelaars</title>
+    
+</head>
+<body>
+
+
+    <div class="background">
+</div>
+
+
+    <header class='main-header'>
+        <div class="menu-wrap">
+            <!-- Logo container -->
+            <p>GVS Brokers/Makelaars</p>
+            
+            <!-- When this is checked, nav menu is dropped -->
+            <input type='checkbox' id='nav-tog'>
+            <!-- Label for the checkbox -->
+            <label for='nav-tog' class="drop-trigger">
+                <!-- Hamburg bars -->
+                <span class="btn-bar top"></span>
+                <span class='btn-bar middle'></span>
+                <span class='btn-bar bottom'></span>
+            </label>
+            
+            <!-- Menu -->
+            <nav class="main-nav">
+                <!-- This covers the whole background of the dropped menu -->
+                <label for='nav-tog' class='nav-revert'></label>
+                <!-- Menu items -->
+                <a href='index.html' class="nav-item"><span>Home</span></a><br>
+                <a href='about.html' class="nav-item"><span>About Us</span></a><br>
+                <a href='blog&news.html' class="nav-item"><span>Blog & News</span></a><br>
+                <a href='autofindbranch.html' class="nav-item"><span>Our Branches</span></a><br>
+                <a href='quote.html' class="nav-item"><span>Get A Quote</span></a><br>
+                <a href='contact.html' class="nav-item"><span>Contact</span></a><br>
+            </nav>
+        </div>
+    </header><br><br><br><br>
+
+
+
+
+
+
+
+
+
+
+
+  <h1>This Is The Nearest Branch To You</h1>
+
+  <p id="location"></p>
+  <ul id="branchList"></ul>
+
+  <script>
+    // Sample branch data with latitude and longitude
+    const branches = [
+
+  {
+    name: "Barnie du Plessis, Kimberley",
+    latitude: -28.7461,
+    longitude: 24.7740,
+    address: "146 George Street, Kimberley, 8301",
+    tel: "+27 87 310 5226",
+    cell: "+27 84 808 0008",
+    email: "barnie@gvsbrokers.co.za",
+    adminEmail: "admin@gvsbrokers.co.za",
+    claimsEmail: "claims@gvsbrokers.co.za",
+    managers: [
+      {
+        name: "Jo-annette Botma",
+        contact: "+27 78 416 1642",
+        email: "jo-annette@gvsbrokers.co.za",
+      },
+      {
+        name: "Reghardt Swanepoel",
+        contact: "+27 82 682 2215",
+        email: "reggie@gvsbrokers.co.za",
+      },
+    ],
+  },
+  {
+    name: "Madelein Bester, Kuruman",
+    latitude: -27.4524,
+    longitude: 23.4327,
+    address: "12 Frylinck str. Kuruman, 8460",
+    cell: "+27 79 524 2427",
+    email: "madelein@gvsmakelaars.com",
+    manager: {
+      name: "Madelein Bester",
+      photo: "/path/to/madelein_bester_photo.jpg",
+      contact: "+27 79 524 2427",
+      email: "madelein@gvsmakelaars.com",
+    },
+  },
+  {
+    name: "Jaco Viviers, Kathu",
+    latitude: -27.7105,
+    longitude: 23.0488,
+    address: "Sandkuil slot 4, Kathu, 8446",
+    cell: "+27 82 511 7555",
+    email: "jacov@gvsmakelaars.com",
+    manager: {
+      name: "Jaco Viviers",
+      photo: "/path/to/jaco_viviers_photo.jpg",
+      contact: "+27 82 511 7555",
+      email: "jacov@gvsmakelaars.com",
+    },
+  },
+  {
+    name: "Christelle Kampfer, Kathu",
+    latitude: -27.7105,
+    longitude: 23.0488,
+    address: "Sandkuil slot 4, Kathu, 8446",
+    cell: "+27 82 776 0482",
+    email: "gvskuruman1@mweb.co.za",
+  },
+  {
+    name: "Ansie Morrison, Mosselbaai",
+    latitude: -34.1794,
+    longitude: 22.1320,
+    address: "184 Hellmuthia Drive, Mosselbaai Golf Estate",
+    cell: "+27 83 667 7954",
+    email: "ansie@gvsmakelaars.com",
+    manager: {
+      name: "Ansie Morrison",
+      photo: "/path/to/ansie_morrison_photo.jpg",
+      contact: "+27 83 667 7954",
+      email: "ansie@gvsmakelaars.com",
+    },
+  },
+  {
+    name: "Barto Giessing, Potchefstroom",
+    latitude: -26.7167,
+    longitude: 27.1000,
+    address: "37 Kuilvoer Singel, Potchefstroom, 2520",
+    cell: "+27 82 774 7940",
+    email: "barto@gvsmakelaars.com",
+    manager: {
+      name: "Barto Giessing",
+      photo: "/path/to/barto_giessing_photo.jpg",
+      contact: "+27 82 774 7940",
+      email: "barto@gvsmakelaars.com",
+    },
+  },
+  {
+    name: "Frikkie Fourie, Schweizer-Reneke",
+    latitude: -27.1969,
+    longitude: 25.3054,
+    address: "64 Schweizerstraat Str, Schweizer-Reneke, 2780",
+    tel: "+27 53 963 1868",
+    cell: "+27 82 944 0382",
+    email: "frikkie@gvsmakelaars.com",
+    manager: {
+      name: "Frikkie Fourie",
+      photo: "/path/to/frikkie_fourie_photo.jpg",
+      contact: "+27 82 944 0382",
+      email: "frikkie@gvsmakelaars.com",
+    },
+  },
+  {
+    name: "Gerhard Swanepoel, Strand",
+    latitude: -34.1139,
+    longitude: 18.8259,
+    address: "16 Maggie Laubser Ave. Strand, 7140",
+    cell: "+27 82 312 2142",
+    email: "gerhard@gvsmakelaars.com",
+    manager: {
+      name: "Gerhard Swanepoel",
+      photo: "/path/to/gerhard_swanepoel_photo.jpg",
+      contact: "+27 82 312 2142",
+      email: "gerhard@gvsmakelaars.com",
+    },
+  },
+  {
+    name: "Riaan Giessing, Ventersdorp",
+    latitude: -26.3667,
+    longitude: 27.1000,
+    address: "34 Aenmey Str, Ventersdorp, 2710",
+    cell: "+27 82 4599 220",
+    email: "riaang@gvsmakelaars.com",
+    manager: {
+      name: "Riaan Giessing",
+      photo: "/path/to/riaan_giessing_photo.jpg",
+      contact: "+27 82 4599 220",
+      email: "riaang@gvsmakelaars.com",
+    },
+  },
+  {
+    name: "Frikkie Fourie, Vryburg",
+    latitude: -26.9566,
+    longitude: 24.7285,
+    address: "86B Stella Straat, Vryburg, 8601",
+    tel: "+27 53 927 1001",
+    cell: "+27 84 586 8961",
+    email: "frikkie@gvsmakelaars.com",
+    manager: {
+      name: "Frikkie Fourie",
+      photo: "/path/to/frikkie_fourie_vryburg_photo.jpg",
+      contact: "+27 84 586 8961",
+      email: "frikkie@gvsmakelaars.com",
+    },
+  },
+  {
+    name: "Johan de Bruin, Upington",
+    latitude: -28.4569,
+    longitude: 21.2420,
+    address: "Posbus 2258, Upington, 8800",
+    tel: "+27 54 332 3218",
+    cell: "+27 84 511 2524",
+    email: "johan@gvsmakelaars.com",
+    manager: {
+      name: "Johan de Bruin",
+      photo: "/path/to/johan_de_bruin_photo.jpg",
+      contact: "+27 84 511 2524",
+      email: "johan@gvsmakelaars.com",
+    },
+  },
+  {
+  name: "Attie Stoltz, Klerksdorp",
+  latitude: -26.8716,
+  longitude: 26.6108,
+  address: "35 De Waal Str. La-Hoff , Klerkdorp 2571",
+  tel: " +27 84 291 2198",
+  email: " atties@gvsmakelaars.com",
+  manager: {
+    name: "Attie Stoltz",
+    photo: "images/logo..jpg",
+    contact: "+27 84 291 2198",
+    email: "atties@gvsmakelaars.com",
+  },
+},
+  // Add other branches with their respective data
+  // ...
+];
+
+// Function to calculate distance between two points using Haversine formula
+function calculateDistance(lat1, lon1, lat2, lon2) {
+  const R = 6371; // Radius of the Earth in kilometers
+  const dLat = deg2rad(lat2 - lat1);
+  const dLon = deg2rad(lon2 - lon1);
+  const a =
+    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) *
+    Math.sin(dLon / 2) * Math.sin(dLon / 2);
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  const distance = R * c; // Distance in kilometers
+  return distance;
+}
+
+function deg2rad(deg) {
+  return deg * (Math.PI / 180);
+}
+
+// Function to find the closest branch
+function findClosestBranch(userLocation) {
+  let closestBranch = null;
+  let minDistance = Number.MAX_VALUE;
+
+  branches.forEach(branch => {
+    // Ensure the branch has the required location data
+    if (branch.latitude !== undefined && branch.longitude !== undefined) {
+      const distance = calculateDistance(
+        userLocation.coords.latitude,
+        userLocation.coords.longitude,
+        branch.latitude,
+        branch.longitude
+      );
+
+      console.log(`Distance to ${branch.name}: ${distance} km`);
+
+      if (distance < minDistance) {
+        minDistance = distance;
+        closestBranch = branch;
+      }
+    }
+  });
+
+  return closestBranch;
+}
+
+// Function to display the closest branch
+function displayClosestBranch(closestBranch) {
+  const branchList = document.getElementById("branchList");
+
+  // Clear previous results
+  branchList.innerHTML = "";
+
+  if (!closestBranch) {
+    console.error("No branches found.");
+    return;
+  }
+
+  const listItem = document.createElement("li");
+  listItem.classList.add("branchItem");
+
+  const branchInfo = document.createElement("div");
+  branchInfo.innerHTML = `
+  <center>
+    <img src="${closestBranch.manager ? closestBranch.manager.photo : ''}" alt="${closestBranch.manager ? closestBranch.manager.name : ''}">
+    <br>  <h2>${closestBranch.name}</h2><br>
+    <p>${closestBranch.address}</p><br>
+    <p>Contact: <a href="tel:${closestBranch.tel ? closestBranch.tel.replace(/\s/g, '') : ''}">${closestBranch.tel || ''}</a></p><br>
+    <p>Email: <a href="mailto:${closestBranch.email || ''}">${closestBranch.email || ''}</a></p><br>
+   </center> `;
+  listItem.appendChild(branchInfo);
+
+  const managerInfo = document.createElement("div");
+
+  if (closestBranch.managers) {
+    closestBranch.managers.forEach(manager => {;
+    });
+  }
+
+  listItem.appendChild(managerInfo);
+  branchList.appendChild(listItem);
+}
+
+// Function to get user's location
+function getUserLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      position => {
+        const userLocation = {
+          coords: {
+            latitude: position.coords.latitude,
+            longitude: position.coords.longitude,
+          },
+        };
+        displayClosestBranch(findClosestBranch(userLocation));
+      },
+      error => {
+        console.error(error.message);
+      }
+    );
+  } else {
+    console.error("Geolocation is not supported by this browser.");
+  }
+}
+
+// Call the function to get user's location
+getUserLocation();
+
+
+// Function to get user's location
+function getUserLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      position => {
+        const userLocation = {
+          coords: {
+            latitude: position.coords.latitude,
+            longitude: position.coords.longitude,
+          },
+        };
+        const closestBranch = findClosestBranch(userLocation);
+
+        if (closestBranch) {
+          console.log("Closest Branch:", closestBranch);
+          displayClosestBranch(closestBranch);
+        } else {
+          console.error("No branches found.");
+        }
+      },
+      error => {
+        console.error(error.message);
+      }
+    );
+  } else {
+    console.error("Geolocation is not supported by this browser.");
+  }
+}
+
+// Call the function to get user's location
+getUserLocation();
+</script>
+
+
+
+<a href="allbranches.html"><center><button class="branchesredirect">View All Branches</button></center></a>
+
+
+
+
+    
+
+
+<footer>
+  <div class="content">
+    <div class="top">
+      <div class="logo-details">
+      </div>
+      <div class="media-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+    <div class="link-boxes">
+      <ul class="box">
+        <li class="link_name">Company</li>
+        <li><a href="about.html">- About Us</a></li>
+        <li><a href="autofindbranch.html">- Branches</a></li>
+        <li><a href="contact.html">- Contact Us</a></li>
+        <li><a href="blog&news.html">- News & Blog</a></li>
+        <li><a href="reviews.html">- Reviews</a></li>
+      </ul>
+      <ul class="box">
+        <li class="link_name">Insurance For</li>
+        <li><a href="#">- Personal Lines</a></li>
+        <li><a href="#">- Commercial Lines</a></li>
+        <li><a href="#">- Commercial Vehicle</a></li>
+        <li><a href="#">- Goods & Transport</a></li>
+        <li><a href="#">- View More</a></li>
+
+      </ul>
+      <ul class="box">
+        <li class="link_name">Account</li>
+        <li><a href="termofservice.html"> Term Of Service</a></li>
+        <li><a href="about.html"> What We Offer</a></li>
+        <li><a href="autofindbranch.html"> Automaticly Find Branch</a></li>
+      </ul>
+      <ul class="box">
+        <li class="link_name">FAQ's</li>
+        <li><a href="https://divweb.co.za/" target="_blank">- Who Made Our Website</a></li>
+        <li><a href="contact.html">- How Can I Contact GVS</a></li>
+        <li><a href="allbranches.html">- Where is GVS </a></li>
+      </ul>
+      <ul class="box input-box"><br>
+        <li class="link_name">Subscribe</li>
+        <li><input type="text" placeholder="Enter your email"></li>
+        <li><input type="button" value="Subscribe"></li>
+      </ul>
+    </div>
+  </div>
+  <div class="bottom-details">
+    <div class="bottom_text">
+     <center> <span class="copyright_text"><h4>Created & Developed by <a href="https://divweb.co.za"><u>DIV WEB</u></h4></a></span>
+    </div>
+  </div>
+</footer>
+
+
+
+
+
+
+    </body>
+    <script src="script.js"></script>
+    </html>
